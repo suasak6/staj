@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Optimal Servis Rota Sistemi</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SOL PANEL -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">🚌</div>
+
+                <div>
+                    <h1>RotaPlan</h1>
+                    <p>Optimal Servis Rota Sistemi</p>
+                </div>
+            </div>
+
+
+            <div class="panel-section">
+
+                <label for="serviceSelect">
+                    Servis Seçimi
+                </label>
+
+                <select id="serviceSelect">
+                    <option value="">
+                        Servis seçiniz
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div
+                id="selectedServiceCard"
+                class="service-card"
+            >
+
+                <div class="empty-service">
+                    Bir servis seçerek rota bilgilerini görüntüleyin.
+                </div>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Toplam Mesafe
+                    </span>
+
+                    <strong id="distanceValue">
+                        -
+                    </strong>
+                </div>
+
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Durak Sayısı
+                    </span>
+
+                    <strong id="stopCount">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <button
+                id="assignEmployeesButton"
+                class="assign-button"
+            >
+                <span>↻</span>
+                Çalışanları Servislere Ata
+            </button>
+
+
+            <div id="statusMessage"></div>
+
+        </aside>
+
+
+        <!-- SAĞ TARAF -->
+        <main class="main-content">
+
+            <div class="topbar">
+
+                <div>
+                    <h2>Servis Rota Haritası</h2>
+
+                    <p>
+                        Servis ve çalışan rotalarını görüntüleyin
+                    </p>
+                </div>
+
+                <div class="legend">
+
+                    <div>
+                        <span class="legend-dot start-dot"></span>
+                        Başlangıç
+                    </div>
+
+                    <div>
+                        <span class="legend-dot stop-dot"></span>
+                        Durak
+                    </div>
+
+                    <div>
+                        <span class="legend-dot end-dot"></span>
+                        Bitiş
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-container">
+
+                <div id="map"></div>
+
+                <div id="routeInfo" class="map-route-info">
+                    Bir servis seçin
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <script src="/static/script.js"></script>
+   
+
+</body>
+
+</html>
