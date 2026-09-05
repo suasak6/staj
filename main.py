@@ -2,10 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import sqlite3
 import requests
-
 from pathlib import Path
-
-
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from route_optimizer import (
@@ -16,15 +13,12 @@ from route_optimizer import (
 BASE_DIR = Path(__file__).resolve().parent
 FRONTEND_DIR = BASE_DIR / "frontend"
 
-
 app = FastAPI()
-
 app.mount(
     "/static",
     StaticFiles(directory=FRONTEND_DIR),
     name="static"
 )
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -36,7 +30,6 @@ app.add_middleware(
 
 def get_connection():
     return sqlite3.connect("route_database.db")
-
 
 @app.get("/")
 def home():
