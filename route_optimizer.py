@@ -143,14 +143,11 @@ def nearest_neighbor_with_first(
 def optimize_route(distance_matrix):
     """
     Index yapısı:
-
     0 = servis başlangıç noktası
     1, 2, 3... = çalışanlar
     son index = servis bitiş noktası
-
     Rota:
     START -> çalışanlar -> END
-
     START ve END sabittir.
     """
 
